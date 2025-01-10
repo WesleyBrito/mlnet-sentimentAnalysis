@@ -93,6 +93,8 @@ The service was terrible.      0
 - Durante a execução, o programa exibirá:
   - Métricas do modelo.
   - Resultados de predições para as entradas fornecidas pelo usuário.
+![image](https://github.com/user-attachments/assets/13060d34-5b17-4661-bce3-0b1b67ab3468)
+
 
 ## Tecnologias Utilizadas
 - **ML.NET:** Biblioteca para aprendizado de máquina em .NET.
