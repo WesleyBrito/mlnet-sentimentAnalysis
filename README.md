@@ -54,7 +54,7 @@ Este projeto utiliza o **ML.NET** para realizar análise de sentimentos em dados
 ## Pré-requisitos
 - **.NET SDK:** Certifique-se de ter o .NET SDK instalado. Você pode baixá-lo [aqui](https://dotnet.microsoft.com/download).
 - **Arquivo de Dados:** O arquivo `yelp_labelled.txt` contendo os dados de treinamento deve estar na pasta `Data` do projeto.
-- **Este projeto está preparado para rodar em `devcontainer` se preferir.
+- **Este projeto está preparado para rodar em `devcontainer` se preferir.**
 
 ## Como Executar
 
