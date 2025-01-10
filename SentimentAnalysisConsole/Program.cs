@@ -17,7 +17,7 @@ string _dataPath = Path.Combine(Environment.CurrentDirectory, folderName, dataFi
 
 MLContext mLContext = new MLContext(seed: 0);
 
-//mLContext.Log += (s, e) => WriteLine(e.Message);
+mLContext.Log += (s, e) => WriteLine(e.Message);
 
 TrainTestData splitDataView = LoadData(mLContext, _dataPath);
 
@@ -132,10 +132,12 @@ void PrintPredictionResult(SentimentPrediction sentimentPrediction)
 {
     Console.ForegroundColor = ConsoleColor.DarkGreen;
     WriteLine();
-    WriteLine("=============== Prediction Test of model with a single sample and test dataset ===============");
+    WriteLine("=============== Prediction Test of model ===============");
 
     WriteLine();
     WriteLine($"Sentiment: {sentimentPrediction.SentimentText} | Prediction: {(Convert.ToBoolean(sentimentPrediction.Prediction) ? "Positive" : "Negative")} | Probability: {sentimentPrediction.Probability} ");
+    
+    WriteLine();
     WriteLine("=============== End of Predictions ===============");
 }
 
