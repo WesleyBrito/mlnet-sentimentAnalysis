@@ -98,5 +98,25 @@ The service was terrible.      0
 - **ML.NET:** Biblioteca para aprendizado de máquina em .NET.
 - **C#:** Linguagem de programação usada no projeto.
 
+## SdcaLogisticRegression
+O SdcaLogisticRegression é um treinador de modelo no ML.NET que utiliza o algoritmo SDCA (Stochastic Dual Coordinate Ascent) para resolver problemas de classificação binária, como prever se um sentimento é positivo ou negativo. Ele combina a eficiência do SDCA com a função de perda logística, que é ideal para tarefas de classificação.
+
+Como funciona o SdcaLogisticRegression?
+O que é SDCA?
+
+É um algoritmo de otimização iterativo que ajusta os parâmetros do modelo em pequenos lotes de dados, reduzindo o custo computacional e permitindo a escalabilidade.
+Trabalha no espaço dual, usando variáveis duals para resolver o problema de otimização de forma eficiente.
+Regressão Logística:
+
+A regressão logística utiliza a função sigmoide para mapear as previsões em um intervalo de 0 a 1, permitindo interpretar as saídas como probabilidades.
+A saída é usada para classificar os exemplos em uma das duas categorias (por exemplo, "positivo" ou "negativo").
+Combinação SDCA + Regressão Logística:
+
+O SDCA ajusta os pesos do modelo para minimizar a perda logística, garantindo que o modelo seja treinado de maneira eficiente, mesmo com grandes conjuntos de dados.
+Vantagens do SdcaLogisticRegression
+Escalabilidade: Funciona bem com grandes conjuntos de dados devido à abordagem estocástica.
+Eficiência: Atualiza os pesos do modelo iterativamente, garantindo convergência rápida.
+Interpretação Probabilística: As previsões retornam probabilidades, facilitando a interpretação dos resultados.
+
 ## Contato
 Caso tenha dúvidas ou sugestões, entre em contato pelo email: `wesley.brito.oliveira@gmail.com`.
