@@ -25,20 +25,7 @@ ITransformer model = BuildAndTrainModel(mLContext, splitDataView.TrainSet);
 
 EvaluateModel(mLContext, model, splitDataView.TestSet);
 
-const string exitPhase = "bye";
-while (true)
-{
-    Console.ForegroundColor = ConsoleColor.White;
-    WriteLine();
-    WriteLine("Enter a sentiment to predict (or 'bye' to exit):");
-    string sentiment = ReadLine();
-    if (sentiment == exitPhase)
-    {
-        break;
-    }
-    SentimentPrediction resultPrediction = UseModelWithSingleItem(mLContext, model, sentiment);
-    PrintPredictionResult(resultPrediction);
-}
+RunPredictionLoop(mLContext, model);
 
 /// <summary>
 /// Load data from text file
@@ -134,7 +121,7 @@ void PrintPredictionResult(SentimentPrediction sentimentPrediction)
 
     WriteLine();
     WriteLine($"Sentiment: {sentimentPrediction.SentimentText} | Prediction: {(Convert.ToBoolean(sentimentPrediction.Prediction) ? "Positive" : "Negative")} | Probability: {sentimentPrediction.Probability} ");
-    
+
     WriteLine();
     WriteLine("=============== End of Predictions ===============");
 }
@@ -154,4 +141,28 @@ void ViewData(TrainTestData splitDataView, int take)
         WriteLine($"{item.Values[1].Key}: {item.Values[1].Value}| {item.Values[0].Key}: {item.Values[0].Value}");
     }
     WriteLine("Finish View data");
+}
+
+/// <summary>
+/// Run the prediction loop
+/// </summary>
+/// <param name="mLContext">Context from MachineLearning</param>
+/// <param name="model">Trained model</param>
+/// <returns></returns>
+void RunPredictionLoop(MLContext mLContext, ITransformer model)
+{
+    const string exitPhase = "bye";
+    while (true)
+    {
+        Console.ForegroundColor = ConsoleColor.White;
+        WriteLine();
+        WriteLine("Enter a sentiment to predict (or 'bye' to exit):");
+        string sentiment = ReadLine();
+        if (sentiment == exitPhase)
+        {
+            break;
+        }
+        SentimentPrediction resultPrediction = UseModelWithSingleItem(mLContext, model, sentiment);
+        PrintPredictionResult(resultPrediction);
+    }
 }
