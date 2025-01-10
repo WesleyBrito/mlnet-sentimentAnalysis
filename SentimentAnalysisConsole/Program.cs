@@ -1,7 +1,5 @@
 ﻿using Microsoft.ML;
-using Microsoft.ML.Data;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using static Microsoft.ML.DataOperationsCatalog;
 using static System.Console;
 
